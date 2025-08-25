@@ -1,0 +1,193 @@
+/* 🔹 Base Styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 1000;
+}
+
+/* ✅ Container fix: make header full-width but keep inner spacing balanced */
+.container {
+  width: 100%;             /* full width */
+  margin: 0;               /* remove centering margin */
+  padding: 0 32px;         /* give small horizontal spacing */
+  box-sizing: border-box;
+}
+
+/* ✅ Logo flush left */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 0;          /* no gap from left */
+  padding-left: 0;         /* no padding */
+}
+
+.nav-logo img {
+  width: 100px;             /* smaller + balanced */
+  height: 40;
+}
+
+.company-name {
+  font-weight: bold;
+  font-size: 22px;
+  font-family: Georgia;
+  color: #ff0202;          /* darker red for brand */
+}
+
+/* ✅ Nav links push away from logo */
+.nav {
+  display: flex;
+  gap: 70px;          /* spacing between links */
+  align-items: center; /* ✅ keeps nav links aligned in center with logo */
+}
+
+.nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: black;
+}
+
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.bar {
+  height: 3px;
+  width: 25px;
+  background: #000000;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+.nav-links li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+/* 🔹 Tablet (769px – 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .hamburger {
+    display: flex;
+    margin-left: auto;
+    margin-right: 5px;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 16px;   /* keep some padding */
+    background: #fff;
+    width: 250px;  /* narrower for tablet */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    display: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 8px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+    .nav-links li a {
+    width: 100%;            /* full width for touch-friendly area */
+    padding: 10px 16px;
+  }
+
+  .nav-links li a:hover {
+    background: #4297f1;
+    color: #fff;
+    transform: none;        /* no lift effect on mobile */
+  }
+}
+
+/* 🔹 Mobile (up to 768px) */
+@media (max-width: 768px) {
+  .nav {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 0 12px;
+  }
+
+  .hamburger {
+    display: flex; 
+    margin-left: auto;
+    margin-right: 30px;/* always above */
+  }
+
+  .nav-links {
+    position: fixed; /* stick to screen */
+    top: 60px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    display: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li a {
+    width: 100%;            /* full width for touch-friendly area */
+    padding: 10px 16px;
+  }
+
+  .nav-links li a:hover {
+    background: #4297f1;
+    color: #fff;
+    transform: none;        /* no lift effect on mobile */
+  }
+}
+
+
+/* 🔹 Desktop (1025px and up) */
+@media (min-width: 1025px) {
+  .nav-links {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    background: transparent;
+    box-shadow: none;
+    gap: 30px;
+    padding: 0;
+    color: #fff;
+  }
+  /* Navbar links */
+.nav-links li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  padding: 8px 14px;      /* space around links (makes them box-like) */
+  border-radius: 6px;     /* rounded corners */
+  transition: all 0.3s ease;
+}
+
+/* Hover effect (box style) */
+.nav-links li a:hover {
+  background: #4297f1;    /* sky blue background */
+  color: #fff;            /* text turns white */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transform: translateY(-2px);  /* subtle lift */
+}
+
+}
