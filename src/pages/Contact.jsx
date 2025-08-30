@@ -3,7 +3,8 @@ import "./Contact.css";
 import { 
   FaWhatsapp, FaLinkedin, FaInstagram, 
   FaFacebook, FaEnvelope, FaPhoneAlt 
-} from "react-icons/fa";
+} 
+from "react-icons/fa";
 
 const Contact = () => {
   // handle sending email via mailto
@@ -67,7 +68,13 @@ const Contact = () => {
             </a>
           </p>
         </div>
+            {/* QR Code */}
+        
+        <div className="qr-section">
+        <p className="qr-text">Scan to Visit</p>
+        <img src="/rajadheeraj-qr1.png" alt="Website QR Code" className="qr-code" />
       </div>
+    </div>
 
       {/* Left Side → Now second (right visually) */}
       <div className="contact-left">

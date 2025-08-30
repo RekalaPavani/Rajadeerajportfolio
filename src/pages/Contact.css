@@ -120,6 +120,30 @@
   font-size: 18px;
   vertical-align: middle;
 }
+.qr-section {
+  margin-top: 20px;
+  text-align: left;
+}
+.qr-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000; /* black color */
+  margin-bottom: 8px;
+}
+.qr-code {
+  width: 130px;
+  height: 130px;
+  margin-top: 10px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 8px;
+  background: white;
+  transition: transform 0.3s ease-in-out;
+}
+
+.qr-code:hover {
+  transform: scale(1.05);
+}
 
 /* Footer */
 .footer {
