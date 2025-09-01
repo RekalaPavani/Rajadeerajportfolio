@@ -72,7 +72,7 @@ const Contact = () => {
         
         <div className="qr-section">
         <p className="qr-text">Scan to Visit</p>
-        <img src="/rajadheeraj-qr1.png" alt="Website QR Code" className="qr-code" />
+        <img src="/rajadheeraj-qr.png" alt="Website QR Code" className="qr-code" />
       </div>
     </div>
 
